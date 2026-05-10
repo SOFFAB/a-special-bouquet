@@ -1,0 +1,938 @@
+body{
+margin:0;
+font-family:'Saira Condensed',sans-serif;
+
+overflow-x:hidden;
+overflow-y:auto;
+}
+
+/* 🌿 FONDO */
+
+.page2{
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+
+padding:
+50px 0 10px;
+
+position:relative;
+
+background:linear-gradient(
+to top,
+#223843 0%,
+#35535b 22%,
+#4f756d 45%,
+#7da08e 70%,
+#dce7dd 100%
+);
+}
+
+/* 🌿 IMAGEN */
+
+.title-img{
+width:90%;
+max-width:420px;
+
+opacity:0;
+transform:translateY(10px);
+
+animation:fadeUp 1.2s ease forwards;
+
+filter:
+drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+}
+
+/* 🌍 COORDENADAS */
+
+.coords-row{
+width:90%;
+max-width:420px;
+
+display:grid;
+grid-template-columns:repeat(6,1fr);
+
+margin-top:12px;
+gap:6px;
+
+opacity:0;
+transform:translateY(10px);
+
+animation:fadeUp 1.2s ease forwards;
+animation-delay:0.3s;
+}
+
+.coord-item{
+text-align:center;
+}
+
+/* 📍 UBICACIÓN */
+
+.place{
+font-family:'Saira Condensed',sans-serif;
+
+font-size:0.48rem;
+font-weight:500;
+line-height:1.15;
+
+color:rgba(255,255,255,0.94);
+
+margin:0 0 2px 0;
+
+text-shadow:
+0 1px 4px rgba(0,0,0,0.20);
+}
+
+/* 🌎 COORDENADAS */
+
+.coord{
+font-family:'Saira Condensed',sans-serif;
+
+font-size:0.40rem;
+font-weight:300;
+line-height:1.15;
+
+color:rgba(255,255,255,0.72);
+
+margin:0;
+
+text-shadow:
+0 1px 3px rgba(0,0,0,0.18);
+}
+
+/* 🌸 FRASE */
+
+.message{
+font-family:'Saira Condensed',sans-serif;
+
+font-size:0.92rem;
+font-weight:300;
+
+line-height:1.8;
+letter-spacing:0.35px;
+
+color:#f8f8f5;
+
+max-width:300px;
+
+margin:36px 34px 0;
+
+text-shadow:
+0 2px 10px rgba(0,0,0,0.20);
+
+opacity:0;
+transform:translateY(10px);
+
+animation:fadeUp 1.2s ease forwards;
+animation-delay:0.5s;
+}
+
+/* 🌿 DECORACIÓN */
+
+.decor-container{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:0;
+overflow:hidden;
+}
+
+/* ✨ BRILLOS */
+
+.sparkle-fall{
+position:absolute;
+
+top:-120px;
+
+width:2px;
+height:18px;
+
+background:
+linear-gradient(
+to bottom,
+transparent,
+rgba(255,255,255,1),
+transparent
+);
+
+opacity:0.9;
+
+animation:sparkleFloat linear infinite;
+
+filter:
+drop-shadow(0 0 8px rgba(255,255,255,0.95));
+}
+
+.sparkle-fall::after{
+content:"";
+
+position:absolute;
+left:50%;
+top:50%;
+
+transform:
+translate(-50%,-50%)
+rotate(90deg);
+
+width:2px;
+height:18px;
+
+background:
+linear-gradient(
+to bottom,
+transparent,
+rgba(255,255,255,1),
+transparent
+);
+}
+
+/* 🍃 HOJAS */
+
+.leaf{
+position:absolute;
+
+top:-140px;
+
+width:14px;
+height:20px;
+
+background:
+linear-gradient(
+135deg,
+#e4f7dd 0%,
+#9dc79b 45%,
+#5f8f6c 100%
+);
+
+border-radius:
+0% 100% 0% 100%;
+
+opacity:0.8;
+
+animation:leafFloat linear infinite;
+
+filter:
+drop-shadow(0 1px 2px rgba(0,0,0,0.10));
+}
+
+.leaf::after{
+content:"";
+
+position:absolute;
+
+width:1.5px;
+height:16px;
+
+background:
+rgba(255,255,255,0.35);
+
+left:50%;
+top:2px;
+
+transform:
+translateX(-50%)
+rotate(-45deg);
+
+border-radius:2px;
+}
+
+/* 💌 TAKE ONE */
+
+.takeone-wrapper{
+position:relative;
+
+margin-top:42px;
+
+width:320px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+opacity:0;
+transform:translateY(10px);
+
+animation:fadeUp 1.2s ease forwards;
+animation-delay:0.8s;
+
+z-index:2;
+}
+
+/* 📄 PAPEL */
+
+.takeone-paper{
+position:relative;
+
+width:100%;
+
+padding:
+28px 18px 26px;
+
+border-radius:22px;
+
+background:
+rgba(248,245,236,0.16);
+
+backdrop-filter:blur(10px);
+
+border:
+1px solid rgba(255,255,255,0.18);
+
+box-shadow:
+0 8px 30px rgba(0,0,0,0.10);
+
+overflow:hidden;
+
+font-family:'Saira Condensed',sans-serif;
+}
+
+/* 🩹 TAPE */
+
+.tape{
+position:absolute;
+
+width:78px;
+height:24px;
+
+background:
+rgba(255,248,230,0.45);
+
+backdrop-filter:blur(2px);
+
+border-radius:4px;
+
+box-shadow:
+0 2px 6px rgba(0,0,0,0.06);
+
+z-index:2;
+}
+
+.tape-left{
+top:-10px;
+left:34px;
+
+transform:
+rotate(-12deg);
+}
+
+.tape-right{
+top:-8px;
+right:34px;
+
+transform:
+rotate(10deg);
+}
+
+/* 💌 TÍTULO */
+
+.take-title{
+font-family:'Saira Condensed',sans-serif;
+
+font-size:1rem;
+font-weight:400;
+
+line-height:1.4;
+
+color:
+rgba(255,255,255,0.95);
+
+margin:0;
+
+text-shadow:
+0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* ✨ SUB */
+
+.take-subtitle{
+font-family:'Saira Condensed',sans-serif;
+
+font-size:0.82rem;
+font-weight:300;
+
+line-height:1.5;
+
+color:
+rgba(255,255,255,0.72);
+
+margin:
+8px 0 24px;
+
+text-shadow:
+0 1px 6px rgba(0,0,0,0.10);
+}
+
+/* 🎟️ TIRITAS */
+
+.tickets{
+display:flex;
+justify-content:space-between;
+gap:8px;
+}
+
+/* 🎟️ TICKET */
+
+.ticket{
+position:relative;
+
+width:44px;
+height:165px;
+
+background:
+rgba(255,255,255,0.10);
+
+border-left:
+1px dashed rgba(255,255,255,0.30);
+
+display:flex;
+justify-content:center;
+align-items:flex-end;
+
+padding-bottom:10px;
+
+overflow:hidden;
+
+transition:
+transform .25s ease,
+background .25s ease,
+opacity .25s ease;
+}
+
+.ticket:hover{
+transform:
+translateY(-4px);
+
+background:
+rgba(255,255,255,0.16);
+}
+
+/* 📝 TEXTO */
+
+.ticket span{
+font-family:'Saira Condensed',sans-serif;
+
+writing-mode:vertical-rl;
+transform:rotate(180deg);
+
+font-size:0.68rem;
+font-weight:400;
+
+line-height:1.12;
+letter-spacing:0.15px;
+
+color:
+rgba(255,255,255,0.92);
+
+text-shadow:
+0 1px 4px rgba(0,0,0,0.12);
+}
+
+.ticket:first-child span{
+text-align:left;
+}
+
+/* 💌 REDIMIDO */
+
+.ticket.redeemed{
+
+background:
+rgba(170,190,175,0.22);
+
+border-left:
+1px dashed rgba(255,255,255,0.12);
+
+opacity:0.55;
+}
+
+.ticket.redeemed span{
+
+color:
+rgba(255,255,255,0.45);
+
+text-shadow:none;
+}
+
+/* 💌 MODAL */
+
+.modal-overlay{
+position:fixed;
+inset:0;
+
+background:
+rgba(10,15,18,0.35);
+
+backdrop-filter:blur(8px);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+opacity:0;
+pointer-events:none;
+
+transition:0.35s ease;
+
+z-index:999;
+}
+
+.modal-overlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+.modal-box{
+width:280px;
+
+padding:
+26px 22px;
+
+border-radius:24px;
+
+background:
+rgba(248,245,236,0.14);
+
+border:
+1px solid rgba(255,255,255,0.18);
+
+backdrop-filter:blur(16px);
+
+box-shadow:
+0 8px 30px rgba(0,0,0,0.18);
+
+transform:
+translateY(10px)
+scale(0.95);
+
+transition:0.35s ease;
+}
+
+.modal-overlay.show .modal-box{
+transform:
+translateY(0)
+scale(1);
+}
+
+.modal-title{
+font-size:1rem;
+font-weight:400;
+
+color:
+rgba(255,255,255,0.92);
+
+margin:0 0 12px;
+
+text-shadow:
+0 1px 5px rgba(0,0,0,0.15);
+}
+
+.modal-ticket{
+font-size:1.05rem;
+font-weight:300;
+
+line-height:1.5;
+
+color:
+rgba(255,255,255,0.78);
+
+margin:0 0 24px;
+}
+
+.modal-buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+}
+
+.modal-btn{
+border:none;
+
+padding:
+10px 18px;
+
+border-radius:14px;
+
+font-family:'Saira Condensed',sans-serif;
+
+font-size:0.9rem;
+
+cursor:pointer;
+
+transition:
+0.25s ease;
+}
+
+.cancel-btn{
+background:
+rgba(255,255,255,0.10);
+
+color:white;
+}
+
+.redeem-btn{
+
+background:
+rgba(88,150,210,0.38);
+
+border:
+1px solid rgba(190,225,255,0.30);
+
+color:white;
+
+backdrop-filter:blur(6px);
+
+box-shadow:
+0 3px 12px rgba(88,150,210,0.22);
+}
+
+.modal-btn:hover{
+transform:translateY(-2px);
+}
+
+/* 🍵 TE */
+
+.tea-section{
+
+margin-top:38px;
+margin-bottom:30px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+opacity:0;
+transform:translateY(10px);
+
+animation:fadeUp 1.2s ease forwards;
+animation-delay:1s;
+}
+
+.tea-scene{
+position:relative;
+
+width:240px;
+height:300px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+cursor:pointer;
+}
+
+#teaEmpty,
+#teaFull{
+
+position:absolute;
+
+width:100%;
+max-width:240px;
+
+transition:
+opacity .9s ease,
+transform 1s ease;
+}
+
+#teaEmpty{
+opacity:1;
+z-index:2;
+}
+
+#teaFull{
+opacity:0;
+
+transform:scale(0.98);
+
+z-index:1;
+}
+
+.tea-scene.active #teaEmpty{
+opacity:0;
+transform:translateY(6px);
+}
+
+.tea-scene.active #teaFull{
+opacity:1;
+transform:scale(1);
+}
+
+/* 💦 AGUA */
+
+.tea-water{
+position:absolute;
+
+top:119px;
+right:130px;
+
+width:6px;
+height:80px;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+to bottom,
+rgba(220,245,255,0.98),
+rgba(170,225,255,0.70),
+transparent
+);
+
+filter:
+blur(0.3px);
+
+opacity:0;
+
+z-index:5;
+
+transform-origin:top center;
+
+transform:
+scaleY(0);
+}
+
+.tea-scene.pouring .tea-water{
+
+animation:pourTea 1.5s ease forwards;
+}
+
+/* ☁️ VAPOR */
+
+.steam{
+position:absolute;
+
+width:28px;
+height:28px;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,0.42);
+
+filter:blur(11px);
+
+opacity:0;
+
+pointer-events:none;
+
+z-index:20;
+}
+
+/* ☁️ MÁS HACIA LA IZQUIERDA */
+
+.steam1{
+top:146px;
+left:98px;
+}
+
+.steam2{
+top:142px;
+left:110px;
+}
+
+.steam3{
+top:148px;
+left:122px;
+}
+
+/* ✨ SOLO UNA RONDA */
+
+.tea-scene.steaming .steam1{
+animation:steamFloat 3.8s ease forwards;
+}
+
+.tea-scene.steaming .steam2{
+animation:steamFloat 3.8s ease forwards;
+animation-delay:.45s;
+}
+
+.tea-scene.steaming .steam3{
+animation:steamFloat 3.8s ease forwards;
+animation-delay:.9s;
+}
+
+/* 🍵 TEXTO */
+
+.tea-text{
+
+font-family:'Saira Condensed',sans-serif;
+
+font-size:1rem;
+font-weight:300;
+
+letter-spacing:0.3px;
+line-height:1.6;
+
+color:
+rgba(255,255,255,0.88);
+
+margin-top:4px;
+
+text-shadow:
+0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* ✨ ANIMACIONES */
+
+@keyframes sparkleFloat{
+
+0%{
+transform:
+translateY(-120px)
+translateX(0)
+rotate(0deg)
+scale(0.8);
+
+opacity:0;
+}
+
+10%{
+opacity:0.95;
+}
+
+25%{
+transform:
+translateY(20vh)
+translateX(10px)
+rotate(30deg)
+scale(1);
+}
+
+50%{
+transform:
+translateY(50vh)
+translateX(-8px)
+rotate(-20deg)
+scale(1.05);
+}
+
+75%{
+transform:
+translateY(80vh)
+translateX(12px)
+rotate(25deg)
+scale(0.95);
+}
+
+100%{
+transform:
+translateY(115vh)
+translateX(-10px)
+rotate(-15deg)
+scale(0.85);
+
+opacity:0;
+}
+}
+
+@keyframes leafFloat{
+
+0%{
+transform:
+translateY(-140px)
+translateX(0)
+rotate(35deg);
+}
+
+20%{
+transform:
+translateY(20vh)
+translateX(14px)
+rotate(60deg);
+}
+
+40%{
+transform:
+translateY(45vh)
+translateX(-10px)
+rotate(40deg);
+}
+
+60%{
+transform:
+translateY(70vh)
+translateX(16px)
+rotate(70deg);
+}
+
+80%{
+transform:
+translateY(95vh)
+translateX(-8px)
+rotate(50deg);
+}
+
+100%{
+transform:
+translateY(115vh)
+translateX(12px)
+rotate(65deg);
+}
+}
+
+@keyframes pourTea{
+
+0%{
+transform:scaleY(0);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+40%{
+transform:scaleY(1);
+opacity:1;
+}
+
+80%{
+transform:scaleY(1);
+opacity:0.95;
+}
+
+100%{
+transform:scaleY(0);
+opacity:0;
+}
+}
+
+@keyframes steamFloat{
+
+0%{
+transform:
+translateY(0)
+translateX(0)
+scale(0.45);
+
+opacity:0;
+}
+
+12%{
+opacity:.82;
+}
+
+45%{
+opacity:.58;
+}
+
+100%{
+transform:
+translateY(-58px)
+translateX(-2px)
+scale(1.7);
+
+opacity:0;
+}
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}

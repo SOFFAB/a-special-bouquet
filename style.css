@@ -1,0 +1,405 @@
+body{
+margin:0;
+font-family:'Saira Condensed',sans-serif;
+
+background:
+linear-gradient(
+to top,
+#5e7f9b 0%,
+#7ea6c7 35%,
+#a9cce7 70%,
+#dfeffd 100%
+);
+
+overflow:hidden;
+}
+
+.page{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding-top:60px;
+position:relative;
+}
+
+/* 🌸 TÍTULO IMAGEN */
+
+.main-title-img{
+width:90%;
+max-width:360px;
+display:block;
+margin:0 auto;
+
+filter:
+drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+}
+
+/* 💛 SUBTÍTULO */
+
+.subtitle{
+font-family:'Saira Condensed',sans-serif;
+
+color:
+rgba(255,255,255,0.92);
+
+margin:10px 20px;
+
+line-height:1.6;
+letter-spacing:0.4px;
+
+text-shadow:
+0 2px 8px rgba(0,0,0,0.12);
+
+opacity:0;
+transform:translateY(10px);
+animation:fadeUp 1.2s ease forwards;
+animation-delay:0.4s;
+}
+
+/* ✨ TEXTO FINAL */
+
+.blow-text{
+font-family:'Saira Condensed',sans-serif;
+
+margin-top:10px;
+
+color:
+rgba(255,255,255,0.72);
+
+font-size:0.9rem;
+font-weight:300;
+
+letter-spacing:1px;
+
+text-shadow:
+0 1px 6px rgba(0,0,0,0.10);
+}
+
+/* 🌸 DECORACIÓN */
+
+.decor-container{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-1;
+overflow:hidden;
+}
+
+/* 💧 GOTAS REALES */
+
+.drop{
+position:absolute;
+
+width:12px;
+height:18px;
+
+background:
+rgba(208,236,255,0.68);
+
+clip-path:
+polygon(
+50% 0%,
+72% 20%,
+88% 42%,
+90% 65%,
+76% 88%,
+50% 100%,
+24% 88%,
+10% 65%,
+12% 42%,
+28% 20%
+);
+
+opacity:0.82;
+
+animation:dropFloat linear infinite;
+
+filter:
+blur(0.15px)
+drop-shadow(0 0 5px rgba(210,235,255,0.55));
+}
+
+/* 🌸 PÉTALOS */
+
+.petal{
+position:absolute;
+
+width:14px;
+height:18px;
+
+background:
+linear-gradient(
+145deg,
+#ffe8f1 0%,
+#f8bfd1 45%,
+#f19bb9 100%
+);
+
+border-radius:
+65% 35% 70% 30%;
+
+transform:
+rotate(35deg);
+
+opacity:0.88;
+
+animation:petalFloat linear infinite;
+
+filter:
+drop-shadow(0 1px 3px rgba(255,182,193,0.22));
+}
+
+/* 💧 MOVIMIENTO GOTAS */
+
+@keyframes dropFloat{
+
+0%{
+transform:
+translateY(-120px)
+translateX(0)
+scale(0.8);
+
+opacity:0;
+}
+
+10%{
+opacity:0.82;
+}
+
+25%{
+transform:
+translateY(20vh)
+translateX(10px)
+scale(1);
+}
+
+50%{
+transform:
+translateY(50vh)
+translateX(-8px)
+scale(1.05);
+}
+
+75%{
+transform:
+translateY(80vh)
+translateX(12px)
+scale(0.95);
+}
+
+100%{
+transform:
+translateY(115vh)
+translateX(-10px)
+scale(0.85);
+
+opacity:0;
+}
+}
+
+/* 🌸 MOVIMIENTO PÉTALOS */
+
+@keyframes petalFloat{
+
+0%{
+transform:
+translateY(-120px)
+translateX(0)
+rotate(15deg);
+}
+
+20%{
+transform:
+translateY(20vh)
+translateX(14px)
+rotate(40deg);
+}
+
+40%{
+transform:
+translateY(45vh)
+translateX(-10px)
+rotate(80deg);
+}
+
+60%{
+transform:
+translateY(70vh)
+translateX(16px)
+rotate(130deg);
+}
+
+80%{
+transform:
+translateY(95vh)
+translateX(-8px)
+rotate(170deg);
+}
+
+100%{
+transform:
+translateY(115vh)
+translateX(12px)
+rotate(220deg);
+}
+}
+
+/* 🌷 ESCENA */
+
+.scene{
+position:relative;
+width:100%;
+height:300px;
+margin-top:5px;
+}
+
+/* 🌷 ORQUÍDEA */
+
+#orchid,
+#orchidBloom{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:0;
+width:180px;
+transition:opacity .8s ease;
+}
+
+#orchidBloom{
+opacity:0;
+}
+
+/* 🪴 REGADERA */
+
+#wateringCan{
+position:absolute;
+top:0;
+left:65%;
+transform:translateX(-50%) rotate(-15deg);
+width:110px;
+cursor:pointer;
+transition:transform .3s ease;
+}
+
+#wateringCan:active{
+transform:translateX(-50%) rotate(-15deg) scale(0.95);
+}
+
+/* 💧 AGUA */
+
+#water{
+position:absolute;
+top:85px;
+left:54%;
+transform:translateX(-50%);
+width:4px;
+height:0;
+background:rgba(210,235,255,0.8);
+border-radius:2px;
+opacity:0;
+}
+
+.water-flow{
+animation:waterDrop 1.2s forwards;
+}
+
+@keyframes waterDrop{
+0%{
+height:0;
+opacity:1;
+}
+
+100%{
+height:150px;
+opacity:0.35;
+}
+}
+
+/* ✨ DESTELLOS */
+
+#sparkles{
+position:absolute;
+left:50%;
+bottom:80px;
+transform:translateX(-50%);
+width:180px;
+height:180px;
+pointer-events:none;
+opacity:0;
+}
+
+.sparkle{
+position:absolute;
+width:2px;
+height:18px;
+
+background:
+linear-gradient(
+to bottom,
+transparent,
+#ffffff,
+transparent
+);
+
+opacity:0;
+
+animation:sparkleAnim 2s ease forwards;
+
+filter:
+drop-shadow(0 0 5px rgba(255,255,255,0.85));
+}
+
+.sparkle::after{
+content:"";
+
+position:absolute;
+left:50%;
+top:50%;
+
+transform:
+translate(-50%,-50%)
+rotate(90deg);
+
+width:2px;
+height:18px;
+
+background:
+linear-gradient(
+to bottom,
+transparent,
+#ffffff,
+transparent
+);
+}
+
+@keyframes sparkleAnim{
+
+0%{
+opacity:0;
+transform:scale(0.5);
+}
+
+50%{
+opacity:1;
+transform:scale(1.2);
+}
+
+100%{
+opacity:0;
+transform:scale(0.6);
+}
+}
+
+/* ✨ APARICIÓN */
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
